@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f8f0"
+    tools:context=".screen_home">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left"
+        >
+
+        <ImageView
+            android:layout_width="108dp"
+            android:layout_height="115dp"
+            android:background="@drawable/logo" />
+
+        <Button
+            android:layout_width="106dp"
+            android:layout_height="128dp"
+            android:layout_marginStart="200dp"
+            android:background="@drawable/icon_tb"
+            app:backgroundTint="@color/black" />
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="150dp"
+        android:layout_marginStart="50dp"
+        android:background="#D1D1D1"
+        android:layout_height="wrap_content"
+        android:entries="@array/spinner_tang" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_height="450dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="a" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="a" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="a" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="a" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/icon_staticsis"
+            app:backgroundTint="@null"
+            android:layout_marginEnd="20dp"/>
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/icon_home"
+            app:backgroundTint="@null"
+            android:layout_marginEnd="20dp"/>
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/icon_phone"
+            app:backgroundTint="@null"
+            android:layout_marginEnd="20dp"/>
+        <Button
+            android:id="@+id/btn_profile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/icon_profile"
+            app:backgroundTint="@null"
+            android:layout_marginEnd="20dp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screen_forgot"
+    android:orientation="vertical"
+    android:background="#f7f8f0">
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_back_forget"
+            android:layout_width="50dp"
+            app:backgroundTint="@null"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/exit"/>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_weight="1"
+            android:layout_marginStart="-65dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/logo" />
+    </LinearLayout>
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/edittext"
+            android:layout_marginTop="70dp"
+            android:hint="ENTER THE USER OR EMAIL"
+            android:textColor="#545454"
+            android:gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:weightSum="100">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:text="Ih31"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:padding="15dp"
+                android:layout_margin="30dp"
+                android:textStyle="bold"
+                android:background="#d9d9d9"/>
+            <EditText
+                android:id="@+id/config"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="70"
+                android:background="@drawable/edittext"
+                app:backgroundTint="@null"
+                android:layout_gravity="center"
+                android:layout_marginEnd="25dp"
+                />
+        </LinearLayout>
+    <Button
+        android:id="@+id/btn_forgot_login"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="LOGIN"
+        android:textColor="@color/black"
+        android:background="@drawable/hcn"
+        app:backgroundTint="#f5caaf"
+        android:textStyle="bold"
+        android:textSize="25dp"/>
+
+
+
+
+</LinearLayout>
