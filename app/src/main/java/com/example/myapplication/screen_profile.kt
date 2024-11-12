@@ -39,6 +39,10 @@ class screen_profile : AppCompatActivity() {
         btn_contact.setOnClickListener {
             swap_Activy(screen_contact::class.java)
         }
+        val tvchange = findViewById<TextView>(R.id.tvChange);
+        tvchange.setOnClickListener {
+            swap_Activy(screen_changepass::class.java)
+        }
 
 
     }
