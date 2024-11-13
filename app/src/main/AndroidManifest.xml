@@ -20,7 +20,7 @@
             android:exported="false" />
         <activity
             android:name=".screen_statistics"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".screen_profile"
             android:exported="false"

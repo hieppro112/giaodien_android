@@ -30,6 +30,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
@@ -69,5 +70,14 @@
 
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="408dp"
+        android:layout_height="470dp"
+        app:srcCompat="@drawable/_bieudo1"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="153dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
