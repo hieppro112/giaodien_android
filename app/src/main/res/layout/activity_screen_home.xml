@@ -19,7 +19,6 @@
             android:layout_width="108dp"
             android:layout_height="115dp"
             android:background="@drawable/logo" />
-
         <Button
             android:layout_width="106dp"
             android:layout_height="128dp"
@@ -32,38 +31,155 @@
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="150dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:background="#D1D1D1"
         android:layout_height="wrap_content"
-        android:entries="@array/spinner_tang" />
+        android:entries="@array/spinner_tang"/>
 
-    <ScrollView
+    <!-- GridLayout chứa danh sách phòng -->
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="30dp"
-        android:layout_height="450dp">
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:layout_margin="16dp"
+        android:orientation="horizontal">
 
+        <!-- Phòng B1.01 -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:padding="8dp">
+
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="a" />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:text="a" />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:text="a" />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:text="a" />
+                android:layout_height="100dp"
+                android:src="@drawable/room_background"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B1.01"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:paddingTop="8dp"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_green" />
         </LinearLayout>
-    </ScrollView>
+
+        <!-- Phòng B1.02 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/room_background"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B1.02"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:paddingTop="8dp"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_green" />
+        </LinearLayout>
+
+        <!-- Phòng B1.03 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/room_background"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B1.03"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:paddingTop="8dp"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_green" />
+        </LinearLayout>
+
+        <!-- Phòng B1.04 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/room_background"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B1.04"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:paddingTop="8dp"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_red" />
+        </LinearLayout>
+
+    </GridLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
