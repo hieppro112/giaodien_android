@@ -42,8 +42,6 @@ class screen_home : AppCompatActivity() {
             swap_Activy(screen_notifycations::class.java)
         }
 
-
-
         val spinnerT = findViewById<Spinner>(R.id.spinner1)
         setSpinner(spinnerT)
 

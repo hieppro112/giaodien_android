@@ -25,15 +25,16 @@
             android:layout_height="100dp"
             android:layout_weight="30"
             android:background="@drawable/logo" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CONTACT"
             android:layout_marginStart="20dp"
             android:layout_weight="30"
+            android:text="PROFILE"
             android:textSize="35dp"
-            android:textStyle="italic|bold"
-            />
+            android:textStyle="italic|bold" />
+
         <Button
             android:layout_weight="30"
             android:id="@+id/btn_notifycations"
