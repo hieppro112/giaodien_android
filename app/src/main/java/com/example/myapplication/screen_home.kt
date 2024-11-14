@@ -28,11 +28,27 @@ class screen_home : AppCompatActivity() {
             val i = Intent(this, screen_profile::class.java)
             startActivity(i)
         }
+        val  btn_call = findViewById<Button>(R.id.btn_contact)
+        btn_call.setOnClickListener{
+            swap_Activy(screen_contact::class.java)
+        }
+        val btn_statictis = findViewById<Button>(R.id.btn_statictisc)
+        btn_statictis.setOnClickListener{
+            swap_Activy(screen_statistics::class.java)
+        }
+
+        val btn_notifycations = findViewById<Button>(R.id.btn_notifycations)
+        btn_notifycations.setOnClickListener{
+            swap_Activy(screen_notifycations::class.java)
+        }
+
+
 
         val spinnerT = findViewById<Spinner>(R.id.spinner1)
         setSpinner(spinnerT)
 
     }
+
 
     private fun setSpinner(spinnerT: Spinner){
         val list = resources.getStringArray(R.array.spinner_tang);
@@ -47,5 +63,9 @@ class screen_home : AppCompatActivity() {
                 TODO("Not yet implemented")
             }
         }
+    }
+    fun swap_Activy(ac:Class<*>){
+        val i = Intent(this, ac)
+        startActivity(i)
     }
 }

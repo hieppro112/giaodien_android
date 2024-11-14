@@ -8,11 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class screen_statistics : AppCompatActivity() {
+class screen_notifycations : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_screen_statistics)
+        setContentView(R.layout.activity_screen_notifycations)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -30,10 +30,9 @@ class screen_statistics : AppCompatActivity() {
         btn_contact.setOnClickListener{
             swap_Activy(screen_contact::class.java)
         }
-
-        val btn_notifycations = findViewById<Button>(R.id.btn_notifycations)
-        btn_notifycations.setOnClickListener{
-            swap_Activy(screen_notifycations::class.java)
+        val  btn_statistics = findViewById<Button>(R.id.btn_statictisc)
+        btn_statistics.setOnClickListener{
+            swap_Activy(screen_statistics::class.java)
         }
 
 
@@ -42,4 +41,4 @@ class screen_statistics : AppCompatActivity() {
         val i = Intent(this, ac)
         startActivity(i)
     }
-}
+    }

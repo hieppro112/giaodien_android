@@ -13,21 +13,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <Button
-            android:id="@+id/btn_back_reg"
-            android:layout_width="50dp"
-            app:backgroundTint="@null"
-            android:layout_height="50dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/exit"/>
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_weight="1"
-            android:layout_marginStart="-65dp"
             android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
             app:srcCompat="@drawable/logo" />
     </LinearLayout>
     <LinearLayout
@@ -66,7 +58,7 @@
             app:backgroundTint="@null"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:text="ENTER THE PASSWORD"
+            android:hint="ENTER THE PASSWORD"
             android:textColor="#545454"
             android:gravity="center"
 
@@ -98,6 +90,20 @@
             android:textSize="25dp"
             android:textStyle="bold"
             />
+
+        <Button
+            android:id="@+id/btn_back_login"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/hcn"
+            android:fontFamily="@font/vollkkorn"
+            android:text="EXIT"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:backgroundTint="#EAC5AF" />
     </LinearLayout>
 
 

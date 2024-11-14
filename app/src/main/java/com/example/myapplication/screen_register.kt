@@ -18,7 +18,7 @@ class screen_register : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val btn_exit = findViewById<Button>(R.id.btn_back_reg)
+        val btn_exit = findViewById<Button>(R.id.btn_back_login)
         btn_exit.setOnClickListener{
             val i =Intent(this, MainActivity::class.java)
             startActivity(i)

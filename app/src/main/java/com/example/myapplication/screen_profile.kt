@@ -44,6 +44,11 @@ class screen_profile : AppCompatActivity() {
             swap_Activy(screen_changepass::class.java)
         }
 
+        val btn_notifycations = findViewById<Button>(R.id.btn_notifycations)
+        btn_notifycations.setOnClickListener{
+            swap_Activy(screen_notifycations::class.java)
+        }
+
 
     }
     fun swap_Activy(ac:Class<*>){

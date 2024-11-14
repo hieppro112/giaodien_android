@@ -9,6 +9,7 @@
     android:background="#f7f8f0">
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,26 +18,38 @@
         <ImageView
             android:layout_width="108dp"
             android:layout_height="100dp"
+            android:layout_weight="30"
             android:background="@drawable/logo" />
-
-        <Button
-            android:id="@+id/btn_tb"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/icon_tb"
-            android:layout_marginStart="200dp"
-            app:backgroundTint="@color/black"
+            android:text="STATISTICS"
+            android:layout_marginStart="20dp"
+            android:layout_weight="30"
+            android:textSize="31dp"
+            android:textStyle="bold|italic"
+
             />
+        <Button
+            android:layout_weight="30"
+            android:id="@+id/btn_notifycations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/icon_tb"
+            app:backgroundTint="@color/black" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="48dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
@@ -47,6 +60,7 @@
             app:backgroundTint="@null" />
 
         <Button
+            android:id="@+id/btn_home"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginEnd="20dp"
@@ -54,6 +68,7 @@
             app:backgroundTint="@null" />
 
         <Button
+            android:id="@+id/btn_contact"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginEnd="20dp"
@@ -75,9 +90,12 @@
         android:id="@+id/imageView5"
         android:layout_width="408dp"
         android:layout_height="470dp"
-        app:srcCompat="@drawable/_bieudo1"
-        tools:layout_editor_absoluteX="3dp"
-        tools:layout_editor_absoluteY="153dp" />
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:srcCompat="@drawable/_bieudo1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
