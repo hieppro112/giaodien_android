@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="#f9faf1"
+    android:id="@+id/custom_dialog_checkin"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100">
+        <TextView
+            android:layout_weight="80"
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginStart="100dp"
+            android:text="ĐẶT PHÒNG"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+        <Button
+            android:layout_weight="20"
+            android:id="@+id/btn_close"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/baseline_close_24"
+            app:backgroundTint="#C62A2A"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_marginVertical="20dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Tên:" />
+
+        <EditText
+            android:id="@+id/edt_checkin_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:ems="10"
+            android:inputType="text"
+            android:background="@drawable/edittext"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="20dp"
+        android:weightSum="100">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="CCCD:" />
+
+        <EditText
+            android:id="@+id/edt_checkin_cccd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:ems="10"
+            android:background="@drawable/edittext"
+            android:inputType="text"
+            android:text="" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_marginVertical="20dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Ngày vào" />
+
+        <EditText
+            android:id="@+id/edt_checkin_datein"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:ems="10"
+            android:text="dd/MM/yyyy"
+            android:gravity="center"
+            android:background="@drawable/edittext"
+            android:inputType="date" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="20dp"
+        android:weightSum="100">
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Đến" />
+
+        <EditText
+            android:id="@+id/btn_checkin_dateout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:ems="10"
+            android:text="dd/MM/yyyy"
+            android:gravity="center"
+            android:background="@drawable/edittext"
+            android:inputType="date" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnxong_dialog_checkin"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/edittext"
+        android:text="Xong"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        app:backgroundTint="#545454" />
+</LinearLayout>

@@ -44,6 +44,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
+            android:id="@+id/btn_statictisc"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginEnd="20dp"
@@ -51,6 +52,7 @@
             app:backgroundTint="@null" />
 
         <Button
+            android:id="@+id/btn_home"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginEnd="20dp"
@@ -58,6 +60,7 @@
             app:backgroundTint="@null" />
 
         <Button
+            android:id="@+id/btn_contact"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginEnd="20dp"

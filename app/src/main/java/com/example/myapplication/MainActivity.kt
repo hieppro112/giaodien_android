@@ -3,8 +3,8 @@ package com.example.myapplication
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Switch
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -22,25 +22,37 @@ class MainActivity : AppCompatActivity() {
             insets
 
         }
-        val Btn_login = findViewById<Button>(R.id.home_login);
-        Btn_login.setOnClickListener{
-//            Toast.makeText(this, "hello",Toast.LENGTH_LONG).show()
-            val i = Intent(this ,screen_Login::class.java)
-            startActivity(i)
-        }
-        val btn_register = findViewById<Button>(R.id.home_register);
-        btn_register.setOnClickListener{
-            val i = Intent(this, screen_register::class.java)
-            startActivity(i)
-        }
-        val txt_forgot = findViewById<TextView>(R.id.txt_forgot)
-        txt_forgot.setOnClickListener{
-            val i = Intent(this, screen_forgot::class.java)
-            startActivity(i)
-
-        }
-
-
+        chuyenmh()
+        chuyen_admin()
     }
-
+    fun xuly_radio(){
+        val rd_admin = findViewById<Switch>(R.id.sw_admin)
+    }
+        fun chuyenmh(){
+            val Btn_login = findViewById<Button>(R.id.home_login);
+            Btn_login.setOnClickListener{
+//            Toast.makeText(this, "hello",Toast.LENGTH_LONG).show()
+                val i = Intent(this ,screen_Login::class.java)
+                startActivity(i)
+            }
+            val btn_register = findViewById<Button>(R.id.home_register);
+            btn_register.setOnClickListener{
+                val i = Intent(this, screen_register::class.java)
+                startActivity(i)
+            }
+            val txt_forgot = findViewById<TextView>(R.id.txt_forgot)
+            txt_forgot.setOnClickListener{
+                val i = Intent(this, screen_forgot::class.java)
+                startActivity(i)
+            }
+        }
+    fun chuyen_admin(){
+        val sw_admin = findViewById<Switch>(R.id.sw_admin)
+        sw_admin.setOnCheckedChangeListener { _, ischecked ->
+            if (ischecked == true){
+                val i = Intent(this, login_admin::class.java)
+                startActivity(i)
+            }
+        }
+    }
 }

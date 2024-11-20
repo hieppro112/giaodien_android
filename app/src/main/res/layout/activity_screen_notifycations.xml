@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/screen_notyfication"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".screen_statistics"
@@ -10,7 +10,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_dialog_tb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
@@ -22,7 +22,8 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:backgroundTint="#B4AFAF"/>
+        app:backgroundTint="#B4AFAF"
+        android:enabled="true"/>
 
     <TextView
         android:id="@+id/textView6"

@@ -15,13 +15,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="50dp">
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_weight="1"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/logo" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/logo" />
 
         <TextView
             android:layout_width="match_parent"
@@ -42,7 +42,7 @@
         android:layout_marginTop="20dp">
 
         <Switch
-            android:id="@+id/sw_admin"
+            android:id="@+id/sw_admin_off"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -66,62 +66,39 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="you already have an account"
+            android:text="Login with account admin"
             android:textSize="25dp"
             android:fontFamily="@font/vollkkorn"
             android:layout_marginTop="30dp"
             android:textStyle="bold"
             android:gravity="center"
             android:textColor="#545454" />
+
         <Button
-            android:id="@+id/home_login"
-            android:layout_marginTop="10dp"
+            android:id="@+id/login_admin"
             android:layout_width="180dp"
             android:layout_height="60dp"
-            app:backgroundTint="@null"
-            android:background="@drawable/hcn"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/hcn"
+            android:fontFamily="@font/vollkkorn"
             android:text="LOGIN"
             android:textColor="@color/black"
-            android:fontFamily="@font/vollkkorn"
             android:textSize="25dp"
             android:textStyle="bold"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="No account yet"
-            android:textSize="25dp"
-            android:fontFamily="@font/vollkkorn"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="#545454" />
-        <Button
-            android:id="@+id/home_register"
-            android:layout_marginTop="10dp"
-            android:layout_width="180dp"
-            android:layout_height="60dp"
-            app:backgroundTint="@null"
-            android:background="@drawable/hcn"
-            android:layout_gravity="center"
-            android:text="REGISTER"
-            android:textColor="@color/black"
-            android:fontFamily="@font/vollkkorn"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            />
+            app:backgroundTint="@null" />
+
         <TextView
             android:id="@+id/txt_forgot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="forgot password"
-            android:textSize="20dp"
-            android:fontFamily="@font/vollkkorn"
             android:layout_marginTop="10dp"
-            android:textStyle="bold"
+            android:fontFamily="@font/vollkkorn"
             android:gravity="center"
-            android:textColor="#545454" />
+            android:text="forgot password"
+            android:textColor="#545454"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
