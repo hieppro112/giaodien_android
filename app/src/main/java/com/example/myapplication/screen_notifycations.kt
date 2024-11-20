@@ -74,4 +74,7 @@ class screen_notifycations : AppCompatActivity() {
 
         dialog.show()
     }
+    fun on_add_thongbao(){
+//        val swich_on = findViewById<Switch>(R.id.sw_on)
+    }
 }
