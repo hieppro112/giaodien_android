@@ -79,8 +79,24 @@
         android:textColor="@color/black"
         android:background="@drawable/hcn"
         app:backgroundTint="#f5caaf"
-        android:textStyle="bold"
-        android:textSize="25dp"/>
+        android:textStyle="bold|italic"
+        android:textSize="25dp"
+        />
+    <Button
+        android:id="@+id/btn_forgot_Exit"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="EXIT"
+        android:textSize="25dp"
+        app:backgroundTint="#969292"
+        android:background="@drawable/hcn"
+        android:layout_marginTop="12dp"
+        android:textStyle="bold|italic"
+        />
+
+
 
 
 

@@ -28,6 +28,11 @@ class screen_forgot : AppCompatActivity() {
             val i = Intent(this, screen_Login::class.java)
             startActivity(i)
         }
+        val btn_forgot_exit = findViewById<Button>(R.id.btn_forgot_Exit)
+        btn_forgot_exit.setOnClickListener{
+            val i = Intent(this,MainActivity::class.java)
+            startActivity(i)
+        }
 
     }
 }
