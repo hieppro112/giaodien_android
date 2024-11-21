@@ -21,12 +21,20 @@
             android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/logo" />
     </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Forgot password"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/vollkkorn"
+        android:gravity="center"/>
         <EditText
             android:layout_width="350dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:background="@drawable/edittext"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="10dp"
             android:hint="ENTER THE USER OR EMAIL"
             android:textColor="#545454"
             android:gravity="center"/>
@@ -49,6 +57,9 @@
                 android:textStyle="bold"
                 android:background="#d9d9d9"/>
             <EditText
+                android:hint="ENTER CONFIRMATION CODE"
+                android:textSize="14dp"
+                android:gravity="center"
                 android:id="@+id/config"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -86,10 +97,4 @@
         android:layout_marginTop="12dp"
         android:textStyle="bold|italic"
         />
-
-
-
-
-
-
 </LinearLayout>

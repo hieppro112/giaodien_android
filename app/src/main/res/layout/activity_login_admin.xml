@@ -50,7 +50,7 @@
             android:text="ADMIN ACCOUT"
             android:textColor="#545454"
             android:layout_weight="1"
-            android:textSize="15dp"
+            android:textSize="14dp"
             android:layout_marginEnd="100dp"
             android:layout_marginStart="130dp"/>
     </LinearLayout>
@@ -95,7 +95,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/vollkkorn"
             android:gravity="center"
-            android:text="forgot password"
+            android:text="Forgot password"
             android:textColor="#545454"
             android:textSize="20dp"
             android:textStyle="bold" />
