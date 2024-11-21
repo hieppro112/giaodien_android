@@ -63,7 +63,7 @@ class screen_home : AppCompatActivity() {
         spinnerT.adapter = hienthi
         spinnerT.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                Toast.makeText(this@screen_home, "ban da chonj: "+ list[p2],Toast.LENGTH_LONG).show();
+                Toast.makeText(this@screen_home, "ban da chon: "+ list[p2],Toast.LENGTH_LONG).show();
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {

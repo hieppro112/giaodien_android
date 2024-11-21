@@ -7,13 +7,14 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AlertDialog.Builder
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isInvisible
 
 class screen_notifycations : AppCompatActivity() {
-    private lateinit var btn_dialog:Button
+    private lateinit var btn_admin_tb:Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,19 +26,36 @@ class screen_notifycations : AppCompatActivity() {
         }
         setcontrol()
         chuyen_mh()
-//   btn_create_notifycations.setOnClickListener{
-    set_add_thongbao()
+        on_add_thongbao()
+        set_add_thongbao()
 
+    }
+
+    fun show_dialog_notifycations(){
+        val dialog_view = LayoutInflater.from(this).inflate(R.layout.custom_dialog_notifycations,null)
+        val builder = AlertDialog.Builder(this)
+        builder.setView(dialog_view)
+        val dialog = builder.create()
+        val btn_huy = dialog_view.findViewById<Button>(R.id.dialog_tb_huy)
+        btn_huy.setOnClickListener{
+            dialog.cancel()
+        }
+        dialog.show()
     }
     fun set_add_thongbao(){
-        btn_dialog.setOnClickListener{
+        btn_admin_tb.setOnClickListener{
             show_dialog_notifycations()
-            Toast.makeText(this,"hello",Toast.LENGTH_LONG).show()
-
         }
     }
-    fun setcontrol(){
-        btn_dialog = findViewById(R.id.btn_dialog_tb)
+    fun on_add_thongbao(){
+        val add_notify  = getSharedPreferences("admin_value", MODE_PRIVATE)
+        val dulieu =add_notify.getBoolean("admin",false)
+//        Toast.makeText(this,dulieu.toString(),Toast.LENGTH_LONG).show()
+        if (dulieu==false){
+            btn_admin_tb.isInvisible=false
+            btn_admin_tb.alpha=0.5f
+            btn_admin_tb.isEnabled=false
+        }
     }
     fun  chuyen_mh(){
         val  btn_home = findViewById<Button>(R.id.btn_home)
@@ -61,20 +79,7 @@ class screen_notifycations : AppCompatActivity() {
         val i = Intent(this, ac)
         startActivity(i)
     }
-    fun show_dialog_notifycations(){
-        setcontrol()
-        val dialog_view = LayoutInflater.from(this).inflate(R.layout.custom_dialog_notifycations,null)
-        val builder = AlertDialog.Builder(this)
-        builder.setView(dialog_view)
-        val dialog = builder.create()
-        val btn_huy = dialog_view.findViewById<Button>(R.id.dialog_tb_huy)
-        btn_huy.setOnClickListener{
-            dialog.cancel()
-        }
-
-        dialog.show()
-    }
-    fun on_add_thongbao(){
-//        val swich_on = findViewById<Switch>(R.id.sw_on)
+    fun setcontrol(){
+        btn_admin_tb = findViewById(R.id.btn_add_notify)
     }
 }
