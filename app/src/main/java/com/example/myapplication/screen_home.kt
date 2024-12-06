@@ -53,10 +53,15 @@ class screen_home : AppCompatActivity() {
         btn_order_room.setOnClickListener {
             sc_order_room.visibility = View.VISIBLE
             sc_top_room.visibility = View.GONE
+            btn_top_sp.setBackgroundResource(R.drawable.custom_btn_zoom_click)
+            btn_order_room.setBackgroundResource(R.drawable.custom_btn_zoom)
+
         }
         btn_top_sp.setOnClickListener {
             sc_order_room.visibility = View.GONE
             sc_top_room.visibility = View.VISIBLE
+            btn_order_room.setBackgroundResource(R.drawable.custom_btn_zoom_click)
+            btn_top_sp.setBackgroundResource(R.drawable.custom_btn_zoom)
         }
     }
     fun setcontrol(){
@@ -140,6 +145,10 @@ class screen_home : AppCompatActivity() {
         }
         dialog.show()
     }
+    fun show_chitiet_sp(){
+        val i = Intent(this,screen_chitiet_phong::class.java)
+        startActivity(i)
+    }
 
     fun click_checkin(){
         val list_zoom = listOf(
@@ -153,7 +162,8 @@ class screen_home : AppCompatActivity() {
         list_zoom.forEach { id->
             val room_layout = findViewById<LinearLayout>(id)
             room_layout.setOnClickListener {
-                showDialog()
+//                showDialog()
+                show_chitiet_sp()
             }
         }
 

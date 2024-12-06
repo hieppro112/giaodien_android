@@ -77,6 +77,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal"
         android:weightSum="2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,11 +97,11 @@
             android:padding="9dp"
             android:weightSum="2">
 
-<!--            <ImageView-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:src="@drawable/ic_top1" />-->
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:src="@drawable/icon_cup" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -108,25 +109,18 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:paddingStart="-20dp"
                 android:text="TOP ROOM"
                 android:textColor="#000"
                 android:textSize="20dp" />
         </LinearLayout>
 
-<!--        <Button-->
-<!--            android:id="@+id/btn_order_room"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:background="@drawable/custom_btn_zoom"-->
-<!--            android:text="Đặt Phòng"-->
-<!--            app:backgroundTint="@null"/>-->
         <LinearLayout
             android:id="@+id/btn_order_room"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/custom_btn_zoom"
+            android:background="@drawable/custom_btn_zoom_click"
             android:orientation="horizontal"
             android:layout_gravity="center"
             android:gravity="center"
@@ -134,11 +128,11 @@
             android:layout_marginHorizontal="0dp"
             android:weightSum="2">
 
-            <!--            <ImageView-->
-            <!--                android:layout_width="0dp"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:src="@drawable/ic_top1" />-->
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/bedroom" />
 
             <TextView
                 android:layout_width="0dp"
@@ -166,13 +160,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="25dp"
             android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="35dp"
-                android:text="top 1"
+                android:text="TOP 1"
+                android:textColor="#000"
+                android:background="#b85347"
                 android:layout_gravity="center"
+                android:textStyle="italic|bold"
                 android:gravity="center"
                 />
         <LinearLayout
@@ -211,7 +209,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="35dp"
-                android:text="top 2"
+                android:text="TOP 2"
+                android:textColor="#000"
+                android:background="#768589"
+                android:textStyle="italic|bold"
                 android:layout_gravity="center"
                 android:gravity="center"
                 />
@@ -248,10 +249,7 @@
                     android:layout_gravity="center"
                     android:src="@drawable/icon_green" />
             </LinearLayout>
-
-
-
-        </LinearLayout>
+       </LinearLayout>
     </ScrollView>
 
     <ScrollView
