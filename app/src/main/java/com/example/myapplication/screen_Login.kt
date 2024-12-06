@@ -29,8 +29,11 @@ class screen_Login : AppCompatActivity() {
         }
         val btn_login = findViewById<Button>(R.id.btn_login_home)
         btn_login.setOnClickListener{
-            val i = Intent(this, screen_home::class.java)
-            startActivity(i)
+            swap_Activy(screen_home::class.java)
         }
+    }
+    fun swap_Activy(ac:Class<*>){
+        val i = Intent(this, ac)
+        startActivity(i)
     }
 }

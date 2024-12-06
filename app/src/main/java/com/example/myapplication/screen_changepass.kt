@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -33,6 +34,11 @@ class screen_changepass : AppCompatActivity() {
         val  btn_statistics = findViewById<Button>(R.id.btn_statictisc)
         btn_statistics.setOnClickListener{
             swap_Activy(screen_statistics::class.java)
+        }
+
+        val btn_notifycation = findViewById<ImageView>(R.id.btn_notifycations)
+        btn_notifycation.setOnClickListener {
+            swap_Activy(screen_notifycations::class.java)
         }
 
 

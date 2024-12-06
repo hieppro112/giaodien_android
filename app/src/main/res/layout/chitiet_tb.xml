@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:padding="30dp"
+    android:background="@drawable/dialog_notifycations"
+    android:id="@+id/custom_dialog_checkin"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100">
+        <TextView
+            android:layout_weight="80"
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginStart="100dp"
+            android:text="Notifycations"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+        <Button
+            android:layout_weight="20"
+            android:id="@+id/btn_close"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/baseline_close_24"
+            app:backgroundTint="#C62A2A"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:text="Thông báo nghỉ lễ 2/9"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Thông báo nghỉ lễ 2/9 vào năm 2024 được bộ và nhà nước phê duyệt sẽ được nghỉ và thuường thêm . " />
+
+    <LinearLayout
+        android:layout_marginTop="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnxong_dialog_checkin"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/edittext"
+            android:text="Done"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            app:backgroundTint="#545454" />
+        <Button
+            android:id="@+id/btn_xoa"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/edittext"
+            android:text="Delete"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            app:backgroundTint="#E91E63" />
+    </LinearLayout>
+</LinearLayout>

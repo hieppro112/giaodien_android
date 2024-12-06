@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Im
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.AdapterView
@@ -11,13 +12,23 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.Toast
+import android.widget.ViewFlipper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.view.animation.AnimationUtils
+import android.widget.ScrollView
+import android.widget.Scroller
+import androidx.transition.Visibility
 
 class screen_home : AppCompatActivity() {
+    lateinit var btn_top_sp:LinearLayout;
+    lateinit var btn_order_room:LinearLayout;
+    lateinit var sc_top_room:ScrollView;
+    lateinit var sc_order_room:ScrollView;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,12 +38,32 @@ class screen_home : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        setcontrol()
         chuyenmh()
         click_checkin()
+        Event_banner()
+        chuyen_top()
 
 //        val spinnerT = findViewById<Spinner>(R.id.spinner1)
 //        setSpinner(spinnerT)
 
+    }
+
+    fun chuyen_top(){
+        btn_order_room.setOnClickListener {
+            sc_order_room.visibility = View.VISIBLE
+            sc_top_room.visibility = View.GONE
+        }
+        btn_top_sp.setOnClickListener {
+            sc_order_room.visibility = View.GONE
+            sc_top_room.visibility = View.VISIBLE
+        }
+    }
+    fun setcontrol(){
+        btn_top_sp = findViewById(R.id.btn_top_sp)
+        btn_order_room = findViewById(R.id.btn_order_room)
+        sc_top_room  = findViewById(R.id.sc_top_room)
+        sc_order_room = findViewById(R.id.sc_order_room)
     }
 
     fun chuyenmh(){
@@ -45,12 +76,12 @@ class screen_home : AppCompatActivity() {
         btn_call.setOnClickListener{
             swap_Activy(screen_contact::class.java)
         }
-        val btn_statictis = findViewById<Button>(R.id.btn_statictisc)
-        btn_statictis.setOnClickListener{
+        val btn_statics = findViewById<Button>(R.id.btn_statictisc)
+        btn_statics.setOnClickListener{
             swap_Activy(screen_statistics::class.java)
         }
 
-        val btn_notifycations = findViewById<Button>(R.id.btn_notifycations)
+        val btn_notifycations = findViewById<ImageView>(R.id.btn_notifycations)
         btn_notifycations.setOnClickListener{
             swap_Activy(screen_notifycations::class.java)
         }
@@ -125,5 +156,13 @@ class screen_home : AppCompatActivity() {
                 showDialog()
             }
         }
+
+    }
+    fun Event_banner(){
+        val view_Flapip = findViewById<ViewFlipper>(R.id.v_Flipper_banner)
+//            view_Flapip.inAnimation = AnimationUtils.lo
+        view_Flapip.inAnimation = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left)
+        view_Flapip.outAnimation = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right)
+        view_Flapip.startFlipping()
     }
 }

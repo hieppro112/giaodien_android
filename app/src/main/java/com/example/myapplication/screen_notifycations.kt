@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -14,7 +15,7 @@ import androidx.core.view.isInvisible
 
 class screen_notifycations : AppCompatActivity() {
     private lateinit var btn_admin_tb:Button
-
+    private lateinit var txt_tb:TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -81,5 +82,17 @@ class screen_notifycations : AppCompatActivity() {
     }
     fun setcontrol(){
         btn_admin_tb = findViewById(R.id.btn_add_notify)
+        txt_tb=findViewById(R.id.txt_tb_dialog)
+    }
+
+
+    fun hienthi_tb(){
+        val dialog_view = LayoutInflater.from(this).inflate(R.layout.chitiet_tb,null)
+        val builder = AlertDialog.Builder(this)
+        builder.setView(dialog_view)
+        val dialog = builder.create()
+        txt_tb.setOnClickListener {
+            dialog.show()
+        }
     }
 }

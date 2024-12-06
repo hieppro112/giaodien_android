@@ -9,10 +9,11 @@
     android:background="#f7f8f0"
     tools:context=".screen_home">
 
+<!--    header-->
     <LinearLayout
         android:id="@+id/linearLayout7"
-        android:layout_width="404dp"
-        android:layout_height="145dp"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
         android:gravity="left"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,26 +25,244 @@
             android:layout_height="115dp"
             android:background="@drawable/logo" />
 
-        <Button
+        <ImageView
             android:id="@+id/btn_notifycations"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
             android:layout_marginStart="200dp"
-            android:background="@drawable/icon_tb"
-            app:backgroundTint="@null" />
+            android:layout_gravity="right"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/btn_notifycations"
+            />
+
 
     </LinearLayout>
 
     <!-- GridLayout chứa danh sách phòng -->
+<!--Banner-->
+    <ViewFlipper
+        android:id="@+id/v_Flipper_banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="10dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/banner_1_romm" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/banner_2_room" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/banner_3_room" />
+
+    </ViewFlipper>
+
+<!--    btn chuyen phong-->
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_Flipper_banner">
+
+        <LinearLayout
+            android:id="@+id/btn_top_sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/custom_btn_zoom"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingHorizontal="2dp"
+            android:padding="9dp"
+            android:weightSum="2">
+
+<!--            <ImageView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:src="@drawable/ic_top1" />-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="TOP ROOM"
+                android:textColor="#000"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_order_room"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/custom_btn_zoom"-->
+<!--            android:text="Đặt Phòng"-->
+<!--            app:backgroundTint="@null"/>-->
+        <LinearLayout
+            android:id="@+id/btn_order_room"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/custom_btn_zoom"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="9dp"
+            android:layout_marginHorizontal="0dp"
+            android:weightSum="2">
+
+            <!--            <ImageView-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:src="@drawable/ic_top1" />-->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Đặt phòng"
+                android:textColor="#000"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <ScrollView
+        android:id="@+id/sc_top_room"
         android:layout_width="426dp"
         android:layout_height="365dp"
         android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="35dp"
+                android:text="top 1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                />
+        <LinearLayout
+            android:id="@+id/lay_top1_room"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/room_background" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="8dp"
+                android:text="B1.01"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_green" />
+        </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="35dp"
+                android:text="top 2"
+                android:layout_gravity="center"
+                android:gravity="center"
+                />
+            <LinearLayout
+                android:id="@+id/lay_top2_room"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#FFFFFF"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/room_background" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="8dp"
+                    android:text="B1.02"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/img_phong_top"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_green" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/sc_order_room"
+        android:layout_width="426dp"
+        android:layout_height="365dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone">
 
         <GridLayout
             android:id="@+id/gridLayout"
@@ -317,38 +536,6 @@
 
     </LinearLayout>
 
-    <RadioGroup
-        android:layout_width="368dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="152dp"
-        android:orientation="horizontal"
-        android:layout_marginEnd="353dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-            <RadioButton
-                android:id="@+id/radioButton"
-                android:paddingHorizontal="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1st Floor" />
-
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2nd Floor"
-                android:paddingHorizontal="10dp"
-                />
-
-            <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3rd Floor" />
-    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
