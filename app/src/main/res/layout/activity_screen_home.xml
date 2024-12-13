@@ -52,17 +52,20 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
         <ImageView
+            android:id="@+id/top1_baner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
             android:src="@drawable/banner_1_romm" />
 
         <ImageView
+            android:id="@+id/top2_baner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
             android:src="@drawable/banner_2_room" />
         <ImageView
+            android:id="@+id/top3_baner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
@@ -185,12 +188,14 @@
             android:padding="8dp">
 
             <ImageView
+                android:id="@+id/img_top1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/room_background" />
 
             <TextView
+                android:id="@+id/top1_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -228,12 +233,14 @@
                 android:padding="8dp">
 
                 <ImageView
+                    android:id="@+id/top2_img"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/room_background" />
 
                 <TextView
+                    android:id="@+id/top2_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -244,6 +251,51 @@
 
                 <ImageView
                     android:id="@+id/img_phong_top"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_green" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="35dp"
+                android:text="TOP 3"
+                android:textColor="#000"
+                android:background="#5F342B"
+                android:layout_gravity="center"
+                android:textStyle="italic|bold"
+                android:gravity="center"
+                />
+            <LinearLayout
+                android:id="@+id/lay_top3_room"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#FFFFFF"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/img_top3"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/room_background" />
+
+                <TextView
+                    android:id="@+id/top3_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="8dp"
+                    android:text="B1.01"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <ImageView
                     android:layout_width="16dp"
                     android:layout_height="16dp"
                     android:layout_gravity="center"

@@ -44,30 +44,51 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_marginBottom="33dp"
+        android:layout_marginBottom="50dp"
         android:text="THÔNG TIN CHI TIẾT"
         android:gravity="center"
         android:textStyle="bold"
         android:textColor="#3F51B5"
         android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
-        app:layout_constraintVertical_bias="0.679"
-        tools:layout_editor_absoluteX="176dp" />
+         />
 
-    <LinearLayout
-        android:id="@+id/linearLayout10"
+    <ImageView
+        android:id="@+id/img_chitiet"
         android:layout_width="match_parent"
         android:layout_height="153dp"
         android:background="@drawable/banner_1_romm"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:layout_editor_absoluteX="-12dp"
-        tools:layout_editor_absoluteY="199dp"></LinearLayout>
+/>
 
     <LinearLayout
-        android:layout_width="427dp"
-        android:layout_height="153dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginStart="50dp"
+            android:id="@+id/maphong_chitiet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Thông tin"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/luotdat_chitiet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="40dp"
+            android:text="Thông tin"
+            android:layout_marginStart="110dp"
+            android:textSize="18sp"
+            android:textColor="#C74B4B"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="200dp"
         android:orientation="vertical"
@@ -89,6 +110,7 @@
             android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/content_chittiet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
@@ -103,11 +125,12 @@
             android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/giaphong_chitiet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1sp"
             android:text="Giá tiền: 629000 VND/ tháng"
-            android:textSize="14sp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -149,48 +172,5 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/btn_statictisc"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/icon_staticsis"
-            app:backgroundTint="@null" />
-
-        <Button
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/icon_home"
-            app:backgroundTint="@null" />
-
-        <Button
-            android:id="@+id/btn_contact"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/icon_phone"
-            app:backgroundTint="@null" />
-
-        <Button
-            android:id="@+id/btn_profile"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/icon_profile"
-            app:backgroundTint="@null" />
-
-
-    </LinearLayout>
 </LinearLayout>

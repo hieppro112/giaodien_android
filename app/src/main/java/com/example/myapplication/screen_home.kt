@@ -21,13 +21,28 @@ import androidx.core.view.WindowInsetsCompat
 import android.view.animation.AnimationUtils
 import android.widget.ScrollView
 import android.widget.Scroller
+import android.widget.TextView
 import androidx.transition.Visibility
+import com.bumptech.glide.Glide
+import room
 
 class screen_home : AppCompatActivity() {
     lateinit var btn_top_sp:LinearLayout;
     lateinit var btn_order_room:LinearLayout;
     lateinit var sc_top_room:ScrollView;
     lateinit var sc_order_room:ScrollView;
+    lateinit var phong:room
+    lateinit var phong2: room
+    lateinit var phong3:room
+    lateinit var img_top1:ImageView
+    lateinit var title_top1:TextView
+    lateinit var img_top2:ImageView
+    lateinit var title_top2:TextView
+    lateinit var img_top3:ImageView
+    lateinit var title_top3:TextView
+    lateinit var top1_baner:ImageView
+    lateinit var top2_baner:ImageView
+    lateinit var top3_baner:ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,11 +59,66 @@ class screen_home : AppCompatActivity() {
         Event_banner()
         chuyen_top()
 
+        top_room(phong,phong2)
+        chitiet_topsp(phong,phong2)
+        banner_top()
+
 //        val spinnerT = findViewById<Spinner>(R.id.spinner1)
 //        setSpinner(spinnerT)
 
     }
+    fun banner_top(){
+        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+            .into(top1_baner)
+        Glide.with(this).load(phong2.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+            .into(top2_baner)
+        Glide.with(this).load(phong3.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+            .into(top3_baner)
+    }
+    fun chitiet_topsp(phong1:room,phong2: room){
+        val l_phong1 = findViewById<LinearLayout>(R.id.lay_top1_room)
+        l_phong1.setOnClickListener {
+            val i = Intent(this,screen_chitiet_phong::class.java)
+            i.putExtra("title",phong1.title)
+            i.putExtra("img",phong1.img)
+            i.putExtra("luotdat",phong1.luotdat)
+            i.putExtra("content",phong1.content)
+            i.putExtra("gia",phong1.gia)
+            startActivity(i)
+        }
+        val l_phong2 = findViewById<LinearLayout>(R.id.lay_top2_room)
+        l_phong2.setOnClickListener {
+            val i = Intent(this,screen_chitiet_phong::class.java)
+            i.putExtra("title",phong2.title)
+            i.putExtra("img",phong2.img)
+            i.putExtra("luotdat",phong2.luotdat)
+            i.putExtra("content",phong2.content)
+            i.putExtra("gia",phong2.gia)
+            startActivity(i)
+        }
+        val l_phong3 = findViewById<LinearLayout>(R.id.lay_top3_room)
+        l_phong3.setOnClickListener {
+            val i = Intent(this,screen_chitiet_phong::class.java)
+            i.putExtra("title",phong3.title)
+            i.putExtra("img",phong3.img)
+            i.putExtra("luotdat",phong3.luotdat)
+            i.putExtra("content",phong3.content)
+            i.putExtra("gia",phong3.gia)
+            startActivity(i)
+        }
+    }
+    fun top_room(phong:room,phong2:room){
+        title_top1.text=phong.title
+        title_top2.text=phong2.title
+        title_top3.text=phong3.title
 
+        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+            .into(img_top1)
+        Glide.with(this).load(phong2.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+            .into(img_top2)
+        Glide.with(this).load(phong3.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+            .into(img_top3)
+    }
     fun chuyen_top(){
         btn_order_room.setOnClickListener {
             sc_order_room.visibility = View.VISIBLE
@@ -69,6 +139,26 @@ class screen_home : AppCompatActivity() {
         btn_order_room = findViewById(R.id.btn_order_room)
         sc_top_room  = findViewById(R.id.sc_top_room)
         sc_order_room = findViewById(R.id.sc_order_room)
+        img_top1 = findViewById(R.id.img_top1)
+        title_top1 = findViewById(R.id.top1_title)
+
+        img_top2= findViewById(R.id.top2_img)
+        title_top2 = findViewById(R.id.top2_title)
+
+        img_top3 =findViewById(R.id.img_top3)
+        title_top3 = findViewById(R.id.top3_title)
+        title_top3
+         phong =room(1,"B1.01","https://th.bing.com/th/id/OIP.BENtDtrJF7Fg8dB3YoWf4QHaEo?rs=1&pid=ImgDetMain",
+            "phòng vip chuẩn quốc tế 5 sao",1000000.0,215);
+         phong2 =room(2,"B2.02","https://th.bing.com/th/id/R.90947c88256cb1b241036115872f7254?rik=35wrQ3miYSfyWA&riu=http%3a%2f%2fnhamuong.com%2fwp-content%2fuploads%2f2017%2f12%2fTRE_8247-e1512544912308.jpg&ehk=3KLHu2e7Cr%2bShHctfCWnNlTxCwYqwQZ8y6zeXzWZkGA%3d&risl=&pid=ImgRaw&r=0",
+            "Phòng có view gần biển gió mát cực kì chill",810000.0,210);
+        phong3 =room(3,"B1.02","https://th.bing.com/th/id/OIP.v1sG89BR8FJPikukpHJefgHaE8?w=253&h=180&c=7&r=0&o=5&pid=1.7",
+            "Với góc nhìn toàn cảnh thành phố đây là một lựa chọn đáng chú ý",910000.0,208);
+
+        top1_baner=findViewById(R.id.top1_baner)
+        top2_baner=findViewById(R.id.top2_baner)
+        top3_baner=findViewById(R.id.top3_baner)
+
     }
 
     fun chuyenmh(){
