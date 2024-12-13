@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -60,7 +61,10 @@ class screen_chitiet_phong : AppCompatActivity() {
         giaphong_chitiet.text ="giá: ${gia.toString()}/ngày"
         val link:String=img.toString()
 
+        img_chitiet.setImageDrawable(null)
+
         Glide.with(this).load(link).placeholder(R.drawable.img_1).error(R.drawable.img)
-            .into(img_chitiet)
+            .override(500, 400).into(img_chitiet)
+
     }
 }
