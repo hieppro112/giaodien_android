@@ -155,6 +155,7 @@
         android:layout_width="426dp"
         android:layout_height="365dp"
         android:layout_marginBottom="36dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
@@ -312,7 +313,7 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <GridLayout
             android:id="@+id/gridLayout"
@@ -343,12 +344,14 @@
                 android:padding="8dp">
 
                 <ImageView
+                    android:id="@+id/img_b101"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/room_background" />
 
                 <TextView
+                    android:id="@+id/id_b101"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -378,12 +381,14 @@
                 android:padding="8dp">
 
                 <ImageView
+                    android:id="@+id/img_b102"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/room_background" />
 
                 <TextView
+                    android:id="@+id/id_b102"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -413,12 +418,14 @@
                 android:padding="8dp">
 
                 <ImageView
+                    android:id="@+id/img_b103"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/room_background" />
 
                 <TextView
+                    android:id="@+id/id_b103"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -448,12 +455,14 @@
                 android:padding="8dp">
 
                 <ImageView
+                    android:id="@+id/img_b104"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/room_background" />
 
                 <TextView
+                    android:id="@+id/id_b104"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -482,12 +491,14 @@
                 android:padding="8dp">
 
                 <ImageView
+                    android:id="@+id/img_b105"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/room_background" />
 
                 <TextView
+                    android:id="@+id/id_b105"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -516,12 +527,14 @@
                 android:padding="8dp">
 
                 <ImageView
+                    android:id="@+id/img_b106"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/room_background" />
 
                 <TextView
+                    android:id="@+id/id_b106"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

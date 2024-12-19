@@ -34,6 +34,7 @@ class screen_home : AppCompatActivity() {
     lateinit var phong:room
     lateinit var phong2: room
     lateinit var phong3:room
+    lateinit var phong4:room
     lateinit var img_top1:ImageView
     lateinit var title_top1:TextView
     lateinit var img_top2:ImageView
@@ -43,6 +44,9 @@ class screen_home : AppCompatActivity() {
     lateinit var top1_baner:ImageView
     lateinit var top2_baner:ImageView
     lateinit var top3_baner:ImageView
+
+    lateinit var img_b101:ImageView
+    lateinit var id_b101:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,6 +69,9 @@ class screen_home : AppCompatActivity() {
 
 //        val spinnerT = findViewById<Spinner>(R.id.spinner1)
 //        setSpinner(spinnerT)
+
+    }
+    fun chitiet_sanpham(){
 
     }
     fun banner_top(){
@@ -111,7 +118,10 @@ class screen_home : AppCompatActivity() {
         title_top1.text=phong.title
         title_top2.text=phong2.title
         title_top3.text=phong3.title
+        id_b101.text = phong.title
 
+        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img_1)
+            .into(img_b101)
         Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
             .into(img_top1)
         Glide.with(this).load(phong2.img).placeholder(R.drawable.img_1).error(R.drawable.img)
@@ -135,6 +145,10 @@ class screen_home : AppCompatActivity() {
         }
     }
     fun setcontrol(){
+        img_b101=findViewById(R.id.img_b101)
+        id_b101 = findViewById(R.id.id_b101)
+
+
         btn_top_sp = findViewById(R.id.btn_top_sp)
         btn_order_room = findViewById(R.id.btn_order_room)
         sc_top_room  = findViewById(R.id.sc_top_room)
@@ -148,12 +162,20 @@ class screen_home : AppCompatActivity() {
         img_top3 =findViewById(R.id.img_top3)
         title_top3 = findViewById(R.id.top3_title)
 
+        //phong b101
          phong =room(1,"B1.01","https://th.bing.com/th/id/OIP.BENtDtrJF7Fg8dB3YoWf4QHaEo?rs=1&pid=ImgDetMain",
             "phòng vip chuẩn quốc tế 5 sao",1000000.0,215);
-         phong2 =room(2,"B2.02","https://th.bing.com/th/id/R.90947c88256cb1b241036115872f7254?rik=35wrQ3miYSfyWA&riu=http%3a%2f%2fnhamuong.com%2fwp-content%2fuploads%2f2017%2f12%2fTRE_8247-e1512544912308.jpg&ehk=3KLHu2e7Cr%2bShHctfCWnNlTxCwYqwQZ8y6zeXzWZkGA%3d&risl=&pid=ImgRaw&r=0",
+        //phong B102
+        phong2 =room(2,"B1.02","https://th.bing.com/th/id/R.90947c88256cb1b241036115872f7254?rik=35wrQ3miYSfyWA&riu=http%3a%2f%2fnhamuong.com%2fwp-content%2fuploads%2f2017%2f12%2fTRE_8247-e1512544912308.jpg&ehk=3KLHu2e7Cr%2bShHctfCWnNlTxCwYqwQZ8y6zeXzWZkGA%3d&risl=&pid=ImgRaw&r=0",
             "Phòng có view gần biển gió mát cực kì chill",810000.0,210);
-        phong3 =room(3,"B1.02","https://th.bing.com/th/id/OIP.v1sG89BR8FJPikukpHJefgHaE8?w=253&h=180&c=7&r=0&o=5&pid=1.7",
+        //phong B103
+        phong3 =room(3,"B1.03","https://th.bing.com/th/id/OIP.v1sG89BR8FJPikukpHJefgHaE8?w=253&h=180&c=7&r=0&o=5&pid=1.7",
             "Với góc nhìn toàn cảnh thành phố đây là một lựa chọn đáng chú ý",910000.0,208);
+        //phong B104
+        phong4 =room(4,"B1.04","https://th.bing.com/th/id/R.cacf51fe5087e4f1518c0c964b44247f?rik=LhOmM8%2b%2bxF02KA&pid=ImgRaw&r=0",
+            "Phong khách sạn thoáng mát giá trị cao được nhiều người chú ý ",750000.0,150);
+
+
 
 
         top1_baner=findViewById(R.id.top1_baner)
@@ -162,6 +184,7 @@ class screen_home : AppCompatActivity() {
 
     }
 
+    //thanh menu
     fun chuyenmh(){
         val btn_profile = findViewById<Button>(R.id.btn_profile)
         btn_profile.setOnClickListener {
