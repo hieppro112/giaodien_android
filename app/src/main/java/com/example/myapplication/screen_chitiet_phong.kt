@@ -63,8 +63,7 @@ class screen_chitiet_phong : AppCompatActivity() {
 
         img_chitiet.setImageDrawable(null)
 
-        Glide.with(this).load(link).placeholder(R.drawable.img_1).error(R.drawable.img)
+        Glide.with(this).load(link).placeholder(R.drawable.room_background).error(R.drawable.room_background)
             .override(500, 400).into(img_chitiet)
-
     }
 }

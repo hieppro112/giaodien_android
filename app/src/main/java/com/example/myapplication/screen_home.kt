@@ -147,13 +147,14 @@ class screen_home : AppCompatActivity() {
 
         img_top3 =findViewById(R.id.img_top3)
         title_top3 = findViewById(R.id.top3_title)
-        title_top3
+
          phong =room(1,"B1.01","https://th.bing.com/th/id/OIP.BENtDtrJF7Fg8dB3YoWf4QHaEo?rs=1&pid=ImgDetMain",
             "phòng vip chuẩn quốc tế 5 sao",1000000.0,215);
          phong2 =room(2,"B2.02","https://th.bing.com/th/id/R.90947c88256cb1b241036115872f7254?rik=35wrQ3miYSfyWA&riu=http%3a%2f%2fnhamuong.com%2fwp-content%2fuploads%2f2017%2f12%2fTRE_8247-e1512544912308.jpg&ehk=3KLHu2e7Cr%2bShHctfCWnNlTxCwYqwQZ8y6zeXzWZkGA%3d&risl=&pid=ImgRaw&r=0",
             "Phòng có view gần biển gió mát cực kì chill",810000.0,210);
         phong3 =room(3,"B1.02","https://th.bing.com/th/id/OIP.v1sG89BR8FJPikukpHJefgHaE8?w=253&h=180&c=7&r=0&o=5&pid=1.7",
             "Với góc nhìn toàn cảnh thành phố đây là một lựa chọn đáng chú ý",910000.0,208);
+
 
         top1_baner=findViewById(R.id.top1_baner)
         top2_baner=findViewById(R.id.top2_baner)

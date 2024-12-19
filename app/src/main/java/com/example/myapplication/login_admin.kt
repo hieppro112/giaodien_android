@@ -27,8 +27,8 @@ class login_admin : AppCompatActivity() {
         }
         setcontrol()
         sw_admin_on.isChecked = true;
-        xuly_swadmin()
         xuly_login_admin()
+        chuyenmanghinh_admin()
 
     }
 
@@ -39,6 +39,7 @@ class login_admin : AppCompatActivity() {
     fun xuly_login_admin(){
         login_admin.setOnClickListener{
             if (sw_admin_on.isChecked) {
+                // gán dữ liệu
                 val user_admin: String = "admin"
                 val pass_admin: String = "123"
                 val i = Intent(this, screen_Login::class.java)
@@ -53,5 +54,14 @@ class login_admin : AppCompatActivity() {
 
         }
     }
+    fun chuyenmanghinh_admin(){
+        sw_admin_on.setOnCheckedChangeListener { _, ischecked ->
+            if (ischecked==false){
+                val i = Intent(this,MainActivity::class.java)
+                startActivity(i)
+            }
+        }
+    }
+
 
 }

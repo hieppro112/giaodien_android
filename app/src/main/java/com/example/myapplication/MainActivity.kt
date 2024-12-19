@@ -72,6 +72,10 @@ class MainActivity : AppCompatActivity() {
                 val i = Intent(this, login_admin::class.java)
                 startActivity(i)
             }
+            else{
+                val i = Intent(this,MainActivity::class.java)
+                startActivity(i)
+            }
         }
     }
 

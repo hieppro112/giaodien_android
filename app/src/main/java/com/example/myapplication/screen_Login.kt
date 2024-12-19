@@ -32,6 +32,8 @@ class screen_Login : AppCompatActivity() {
         user = findViewById(R.id.txt_user)
         pass = findViewById(R.id.txt_pass)
 
+
+        // láy giá trị từ intent đăng ký
         val duLieuUser = intent.getStringExtra("USERNAME")
         val duLieuPass = intent.getStringExtra("PASSWORD")
 
@@ -52,7 +54,6 @@ class screen_Login : AppCompatActivity() {
                 Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show()
                 swap_Activy(screen_home::class.java)  // Chuyển tới màn hình Home
             } else {
-
                 Toast.makeText(this, "Thông tin đăng nhập không chính xác, xem lại tên đăng nhập hoặc mật khẩu", Toast.LENGTH_SHORT).show()
             }
 
@@ -64,6 +65,7 @@ class screen_Login : AppCompatActivity() {
         val i = Intent(this, ac)
         startActivity(i)
     }
+    // kiểm tra xem người dùng có nhập đúng dữ liệu admin hay kh
     fun laydl_admin( user_a:String, pass_a:String):Boolean{
         val user_ad = intent.getStringExtra("user_admin")
         val pass_ad = intent.getStringExtra("pass_admin")

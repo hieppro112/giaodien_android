@@ -29,7 +29,7 @@ class screen_register : AppCompatActivity() {
 
     }
     fun setcontrol(){
-
+     // anh xa
         user = findViewById(R.id.reg_user)
         pass = findViewById(R.id.reg_pass)
         confirm_pass= findViewById(R.id.txt_pass)
@@ -43,6 +43,7 @@ class screen_register : AppCompatActivity() {
         }
         val btn_register_login = findViewById<Button>(R.id.btn_register_login)
         btn_register_login.setOnClickListener{
+            // lưu mật khẩu mà người dùng đã nhập
             val tk_user: String = user.text.toString()
             if (pass.text.toString() == confirm_pass.text.toString()) {
                 val tk_pass = pass.text.toString()
