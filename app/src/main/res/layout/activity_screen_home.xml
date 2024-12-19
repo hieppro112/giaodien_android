@@ -155,7 +155,7 @@
         android:layout_width="426dp"
         android:layout_height="365dp"
         android:layout_marginBottom="36dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
@@ -201,7 +201,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingTop="8dp"
-                android:text="B1.01"
+                android:text="B1.0100"
                 android:textColor="#000000"
                 android:textSize="18sp" />
 
@@ -313,7 +313,7 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <GridLayout
             android:id="@+id/gridLayout"

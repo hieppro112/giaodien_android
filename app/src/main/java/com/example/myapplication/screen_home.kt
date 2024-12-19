@@ -35,6 +35,8 @@ class screen_home : AppCompatActivity() {
     lateinit var phong2: room
     lateinit var phong3:room
     lateinit var phong4:room
+    lateinit var phong5:room
+    lateinit var phong6:room
     lateinit var img_top1:ImageView
     lateinit var title_top1:TextView
     lateinit var img_top2:ImageView
@@ -47,6 +49,21 @@ class screen_home : AppCompatActivity() {
 
     lateinit var img_b101:ImageView
     lateinit var id_b101:TextView
+    lateinit var img_b102:ImageView
+    lateinit var id_b102:TextView
+    lateinit var img_b103:ImageView
+    lateinit var id_b103:TextView
+    lateinit var img_b104:ImageView
+    lateinit var id_b104:TextView
+    lateinit var img_b105:ImageView
+    lateinit var id_b105:TextView
+    lateinit var img_b106:ImageView
+    lateinit var id_b106:TextView
+
+    lateinit var lay_top1_room:LinearLayout
+    lateinit var lay_top2_room:LinearLayout
+    lateinit var lay_top3_room:LinearLayout
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,70 +81,124 @@ class screen_home : AppCompatActivity() {
         chuyen_top()
 
         top_room(phong,phong2)
-        chitiet_topsp(phong,phong2)
         banner_top()
+        tim_top_room()
+
+        chitiet_phong_top()
 
 //        val spinnerT = findViewById<Spinner>(R.id.spinner1)
 //        setSpinner(spinnerT)
 
     }
+    fun sapXepPhongTheoLuotDat(phongs: List<room>): List<room> {
+        return phongs.sortedByDescending { it.luotdat }
+    }
+    fun tim_top_room(){
+        val danhsachphong  = listOf(phong,phong2,phong3,phong4,phong5,phong6)
+        val sapxepphong = sapXepPhongTheoLuotDat(danhsachphong)
+        val top3 = sapxepphong.take(3)
+        var i:Int =0
+        for (phong in sapxepphong){
+            i += 1
+            //Toast.makeText(this,"title: ${phong.title}  img: ${phong.luotdat}",Toast.LENGTH_LONG).show()
+            when(i) {
+
+                    1 -> {
+                        title_top1.text = phong.title
+                        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1)
+                            .error(R.drawable.img_1)
+                            .into(img_top1)
+
+                        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+                            .into(top1_baner)
+                    }
+                    2->{
+                        title_top2.text = phong.title
+                        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1)
+                            .error(R.drawable.img_1)
+                            .into(img_top2)
+                        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+                            .into(top2_baner)
+
+                    }
+                    3->{
+                        title_top3.text = phong.title
+                        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1)
+                            .error(R.drawable.img_1)
+                            .into(img_top3)
+                        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+                            .into(top3_baner)
+                    }
+            }
+
+        }
+
+    }
     fun chitiet_sanpham(){
 
     }
+
+    //hiep banner
     fun banner_top(){
-        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
-            .into(top1_baner)
-        Glide.with(this).load(phong2.img).placeholder(R.drawable.img_1).error(R.drawable.img)
-            .into(top2_baner)
-        Glide.with(this).load(phong3.img).placeholder(R.drawable.img_1).error(R.drawable.img)
-            .into(top3_baner)
+//        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+//            .into(top1_baner)
+//        Glide.with(this).load(phong2.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+//            .into(top2_baner)
+//        Glide.with(this).load(phong3.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+//            .into(top3_baner)
     }
-    fun chitiet_topsp(phong1:room,phong2: room){
-        val l_phong1 = findViewById<LinearLayout>(R.id.lay_top1_room)
-        l_phong1.setOnClickListener {
+
+
+    fun chitiet_phong_top(){
+        lay_top1_room.setOnClickListener {
             val i = Intent(this,screen_chitiet_phong::class.java)
-            i.putExtra("title",phong1.title)
-            i.putExtra("img",phong1.img)
-            i.putExtra("luotdat",phong1.luotdat)
-            i.putExtra("content",phong1.content)
-            i.putExtra("gia",phong1.gia)
+            if (title_top1.text==null){
+                Toast.makeText(this,"gitri null",Toast.LENGTH_LONG).show()
+            }
+            else {
+                i.putExtra("tt", title_top1.text.toString())
+            }
             startActivity(i)
         }
-        val l_phong2 = findViewById<LinearLayout>(R.id.lay_top2_room)
-        l_phong2.setOnClickListener {
+
+        lay_top2_room.setOnClickListener {
             val i = Intent(this,screen_chitiet_phong::class.java)
-            i.putExtra("title",phong2.title)
-            i.putExtra("img",phong2.img)
-            i.putExtra("luotdat",phong2.luotdat)
-            i.putExtra("content",phong2.content)
-            i.putExtra("gia",phong2.gia)
+            if (title_top2.text==null){
+                Toast.makeText(this,"gitri null",Toast.LENGTH_LONG).show()
+            }
+            else {
+                i.putExtra("tt", title_top2.text.toString())
+            }
             startActivity(i)
         }
-        val l_phong3 = findViewById<LinearLayout>(R.id.lay_top3_room)
-        l_phong3.setOnClickListener {
+        lay_top3_room.setOnClickListener {
             val i = Intent(this,screen_chitiet_phong::class.java)
-            i.putExtra("title",phong3.title)
-            i.putExtra("img",phong3.img)
-            i.putExtra("luotdat",phong3.luotdat)
-            i.putExtra("content",phong3.content)
-            i.putExtra("gia",phong3.gia)
+            if (title_top3.text==null){
+                Toast.makeText(this,"gitri null",Toast.LENGTH_LONG).show()
+            }
+            else {
+                i.putExtra("tt", title_top3.text.toString())
+            }
             startActivity(i)
         }
     }
+
+
+    //hiep hien thi top
     fun top_room(phong:room,phong2:room){
-        title_top1.text=phong.title
-        title_top2.text=phong2.title
-        title_top3.text=phong3.title
+//        title_top1.text=phong.title
+//        title_top2.text=phong2.title
+//        title_top3.text=phong3.title
         id_b101.text = phong.title
 
         Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img_1)
             .into(img_b101)
-        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
-            .into(img_top1)
-        Glide.with(this).load(phong2.img).placeholder(R.drawable.img_1).error(R.drawable.img)
-            .into(img_top2)
-        Glide.with(this).load(phong3.img).placeholder(R.drawable.img_1).error(R.drawable.img)
-            .into(img_top3)
+//        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+//            .into(img_top1)
+//        Glide.with(this).load(phong2.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+//            .into(img_top2)
+//        Glide.with(this).load(phong3.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+//            .into(img_top3)
     }
     fun chuyen_top(){
         btn_order_room.setOnClickListener {
@@ -145,35 +216,47 @@ class screen_home : AppCompatActivity() {
         }
     }
     fun setcontrol(){
+         lay_top1_room = findViewById(R.id.lay_top1_room)
+         lay_top2_room = findViewById(R.id.lay_top2_room)
+         lay_top3_room = findViewById(R.id.lay_top3_room)
+
+
         img_b101=findViewById(R.id.img_b101)
         id_b101 = findViewById(R.id.id_b101)
+        img_b102=findViewById(R.id.img2)
+        id_b102 = findViewById(R.id.id_b102)
+
 
 
         btn_top_sp = findViewById(R.id.btn_top_sp)
         btn_order_room = findViewById(R.id.btn_order_room)
         sc_top_room  = findViewById(R.id.sc_top_room)
         sc_order_room = findViewById(R.id.sc_order_room)
+
+
         img_top1 = findViewById(R.id.img_top1)
         title_top1 = findViewById(R.id.top1_title)
-
         img_top2= findViewById(R.id.top2_img)
         title_top2 = findViewById(R.id.top2_title)
-
         img_top3 =findViewById(R.id.img_top3)
         title_top3 = findViewById(R.id.top3_title)
 
         //phong b101
          phong =room(1,"B1.01","https://th.bing.com/th/id/OIP.BENtDtrJF7Fg8dB3YoWf4QHaEo?rs=1&pid=ImgDetMain",
-            "phòng vip chuẩn quốc tế 5 sao",1000000.0,215);
+            "phòng vip chuẩn quốc tế 5 sao",1000000.0,450);
         //phong B102
         phong2 =room(2,"B1.02","https://th.bing.com/th/id/R.90947c88256cb1b241036115872f7254?rik=35wrQ3miYSfyWA&riu=http%3a%2f%2fnhamuong.com%2fwp-content%2fuploads%2f2017%2f12%2fTRE_8247-e1512544912308.jpg&ehk=3KLHu2e7Cr%2bShHctfCWnNlTxCwYqwQZ8y6zeXzWZkGA%3d&risl=&pid=ImgRaw&r=0",
-            "Phòng có view gần biển gió mát cực kì chill",810000.0,210);
+            "Phòng có view gần biển gió mát cực kì chill",810000.0,500);
         //phong B103
         phong3 =room(3,"B1.03","https://th.bing.com/th/id/OIP.v1sG89BR8FJPikukpHJefgHaE8?w=253&h=180&c=7&r=0&o=5&pid=1.7",
-            "Với góc nhìn toàn cảnh thành phố đây là một lựa chọn đáng chú ý",910000.0,208);
+            "Với góc nhìn toàn cảnh thành phố đây là một lựa chọn đáng chú ý",910000.0,400);
         //phong B104
         phong4 =room(4,"B1.04","https://th.bing.com/th/id/R.cacf51fe5087e4f1518c0c964b44247f?rik=LhOmM8%2b%2bxF02KA&pid=ImgRaw&r=0",
             "Phong khách sạn thoáng mát giá trị cao được nhiều người chú ý ",750000.0,150);
+        phong5 =room(5,"B1.05","https://www.besthotelshanghai.com/data/Photos/OriginalPhoto/11274/1127497/1127497656.JPEG",
+            "Phong khách sạn thoáng mát giá trị cao được nhiều người chú ý ",950000.0,150);
+        phong6 =room(6,"B1.06","https://live.staticflickr.com/2832/8943636766_2bb6601b34_b.jpg",
+            "Phong khách sạn thoáng mát giá trị cao được nhiều người chú ý ",6000000.0,150);
 
 
 
