@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
+import android.content.Context
 import androidx.core.view.WindowInsetsCompat
 
 class screen_register : AppCompatActivity() {
@@ -29,7 +30,7 @@ class screen_register : AppCompatActivity() {
 
     }
     fun setcontrol(){
-     // anh xa
+        // anh xa
         user = findViewById(R.id.reg_user)
         pass = findViewById(R.id.reg_pass)
         confirm_pass= findViewById(R.id.txt_pass)
@@ -47,7 +48,15 @@ class screen_register : AppCompatActivity() {
             val tk_user: String = user.text.toString()
             if (pass.text.toString() == confirm_pass.text.toString()) {
                 val tk_pass = pass.text.toString()
-                Toast.makeText(this,"Đăng ký thành công",Toast.LENGTH_LONG).show()
+
+                // Lưu thông tin người dùng vào SharedPreferences
+                val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putString("username", tk_user)
+                editor.putString("password", tk_pass)
+                editor.apply()
+
+                Toast.makeText(this, "Đăng ký thành công", Toast.LENGTH_LONG).show()
 
                 val i = Intent(this, screen_Login::class.java)
                 i.putExtra("USERNAME", tk_user)

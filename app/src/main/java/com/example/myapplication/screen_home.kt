@@ -24,6 +24,7 @@ import android.widget.Scroller
 import android.widget.TextView
 import androidx.transition.Visibility
 import com.bumptech.glide.Glide
+import com.example.myapplication.screen_profile
 import room
 
 class screen_home : AppCompatActivity() {

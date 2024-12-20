@@ -29,60 +29,38 @@
         android:textStyle="bold"
         android:fontFamily="@font/vollkkorn"
         android:gravity="center"/>
-        <EditText
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:background="@drawable/edittext"
-            android:layout_marginTop="10dp"
-            android:hint="ENTER THE USER OR EMAIL"
-            android:textColor="#545454"
-            android:gravity="center"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:weightSum="100">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="30"
-                android:text="Ih31"
-                android:textColor="@color/black"
-                android:gravity="center"
-                android:textSize="30dp"
-                android:padding="15dp"
-                android:layout_margin="30dp"
-                android:textStyle="bold"
-                android:background="#d9d9d9"/>
-            <EditText
-                android:hint="ENTER CONFIRMATION CODE"
-                android:textSize="14dp"
-                android:gravity="center"
-                android:id="@+id/config"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="70"
-                android:background="@drawable/edittext"
-                app:backgroundTint="@null"
-                android:layout_gravity="center"
-                android:layout_marginEnd="25dp"
-                />
-        </LinearLayout>
+    <EditText
+        android:id="@+id/edt_forgot_user"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edittext"
+        android:layout_marginTop="10dp"
+        android:hint="ENTER USERNAME"
+        android:textColor="#545454"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:weightSum="100">
+
+
+    </LinearLayout>
     <Button
-        android:id="@+id/btn_forgot_login"
+        android:id="@+id/btn_forgot_send"
         android:layout_marginTop="20dp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="LOGIN"
+        android:text="SEND NEW PASSWORD"
         android:textColor="@color/black"
         android:background="@drawable/hcn"
         app:backgroundTint="#f5caaf"
         android:textStyle="bold|italic"
-        android:textSize="25dp"
+        android:textSize="14dp"
         />
     <Button
         android:id="@+id/btn_forgot_Exit"

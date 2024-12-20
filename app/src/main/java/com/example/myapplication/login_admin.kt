@@ -37,8 +37,10 @@ class login_admin : AppCompatActivity() {
         login_admin = findViewById(R.id.login_admin)
     }
     fun xuly_login_admin(){
+        Toast.makeText(this, "Admin is on", Toast.LENGTH_SHORT).show();
         login_admin.setOnClickListener{
             if (sw_admin_on.isChecked) {
+
                 // gán dữ liệu
                 val user_admin: String = "admin"
                 val pass_admin: String = "123"
@@ -58,6 +60,8 @@ class login_admin : AppCompatActivity() {
         sw_admin_on.setOnCheckedChangeListener { _, ischecked ->
             if (ischecked==false){
                 val i = Intent(this,MainActivity::class.java)
+                Toast.makeText(this, "Admin is off", Toast.LENGTH_SHORT).show();
+
                 startActivity(i)
             }
         }

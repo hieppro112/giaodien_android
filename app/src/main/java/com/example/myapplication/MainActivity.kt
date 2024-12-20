@@ -54,18 +54,18 @@ class MainActivity : AppCompatActivity() {
     fun xuly_radio(){
         val rd_admin = findViewById<Switch>(R.id.sw_admin)
     }
-        fun chuyenmh(){
+    fun chuyenmh(){
 
-            btn_register.setOnClickListener{
-                val i = Intent(this, screen_register::class.java)
-                startActivity(i)
-            }
-            val txt_forgot = findViewById<TextView>(R.id.txt_forgot)
-            txt_forgot.setOnClickListener{
-                val i = Intent(this, screen_forgot::class.java)
-                startActivity(i)
-            }
+        btn_register.setOnClickListener{
+            val i = Intent(this, screen_register::class.java)
+            startActivity(i)
         }
+        val txt_forgot = findViewById<TextView>(R.id.txt_forgot)
+        txt_forgot.setOnClickListener{
+            val i = Intent(this, screen_forgot::class.java)
+            startActivity(i)
+        }
+    }
     fun chuyen_admin(){
         sw_admin.setOnCheckedChangeListener { _, ischecked ->
             if (ischecked == true){
@@ -80,9 +80,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun on_add_notifycations(con:Boolean){
-            val luu = getSharedPreferences("admin_value", MODE_PRIVATE)
-            val edit = luu.edit()
-            edit.putBoolean("admin",con)
-            edit.apply()
+        val luu = getSharedPreferences("admin_value", MODE_PRIVATE)
+        val edit = luu.edit()
+        edit.putBoolean("admin",con)
+        edit.apply()
     }
 }
