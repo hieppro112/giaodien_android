@@ -94,6 +94,7 @@ class screen_home : AppCompatActivity() {
     fun sapXepPhongTheoLuotDat(phongs: List<room>): List<room> {
         return phongs.sortedByDescending { it.luotdat }
     }
+    //hiep top san pham
     fun tim_top_room(){
         val danhsachphong  = listOf(phong,phong2,phong3,phong4,phong5,phong6)
         val sapxepphong = sapXepPhongTheoLuotDat(danhsachphong)
@@ -141,12 +142,7 @@ class screen_home : AppCompatActivity() {
 
     //hiep banner
     fun banner_top(){
-//        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
-//            .into(top1_baner)
-//        Glide.with(this).load(phong2.img).placeholder(R.drawable.img_1).error(R.drawable.img)
-//            .into(top2_baner)
-//        Glide.with(this).load(phong3.img).placeholder(R.drawable.img_1).error(R.drawable.img)
-//            .into(top3_baner)
+
     }
 
 
@@ -257,7 +253,7 @@ class screen_home : AppCompatActivity() {
         phong5 =room(5,"B1.05","https://www.besthotelshanghai.com/data/Photos/OriginalPhoto/11274/1127497/1127497656.JPEG",
             "Phong khách sạn thoáng mát giá trị cao được nhiều người chú ý ",950000.0,150);
         phong6 =room(6,"B1.06","https://live.staticflickr.com/2832/8943636766_2bb6601b34_b.jpg",
-            "Phong khách sạn thoáng mát giá trị cao được nhiều người chú ý ",6000000.0,150);
+            "Phong khách sạn thoáng mát giá trị cao được nhiều người chú ý ",6000000.0,900);
 
 
 
@@ -267,9 +263,13 @@ class screen_home : AppCompatActivity() {
         top3_baner=findViewById(R.id.top3_baner)
 
     }
-
     //thanh menu
     fun chuyenmh(){
+        val btn_cart = findViewById<ImageView>(R.id.btn_cart)
+        btn_cart.setOnClickListener {
+            val i = Intent(this, screen_giohang::class.java)
+            startActivity(i)
+        }
         val btn_profile = findViewById<Button>(R.id.btn_profile)
         btn_profile.setOnClickListener {
             val i = Intent(this, screen_profile::class.java)

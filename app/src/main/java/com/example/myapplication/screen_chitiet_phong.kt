@@ -61,7 +61,7 @@ class screen_chitiet_phong : AppCompatActivity() {
         phong5 =room(5,"B1.05","https://www.besthotelshanghai.com/data/Photos/OriginalPhoto/11274/1127497/1127497656.JPEG",
             "Phong khách sạn thoáng mát giá trị cao được nhiều người chú ý ",950000.0,150);
         phong6 =room(6,"B1.06","https://live.staticflickr.com/2832/8943636766_2bb6601b34_b.jpg",
-            "Phong khách sạn thoáng mát giá trị cao được nhiều người chú ý ",6000000.0,150);
+            "Phong khách sạn thoáng mát giá trị cao được nhiều người chú ý ",6000000.0,900);
 
     }
     fun setEvent(){
