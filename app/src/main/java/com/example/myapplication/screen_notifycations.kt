@@ -43,7 +43,7 @@ class screen_notifycations : AppCompatActivity() {
         setcontrol(sharedPreferences)
 //        setEvent()
         chuyen_mh()
-//        on_add_thongbao()
+        on_add_thongbao()
         get_position(sharedPreferences)
         set_add_thongbao(sharedPreferences)
     }
@@ -84,13 +84,17 @@ class screen_notifycations : AppCompatActivity() {
         }
     }
     fun on_add_thongbao(){
-        val add_notify  = getSharedPreferences("admin_value", MODE_PRIVATE)
-        val dulieu =add_notify.getBoolean("admin",false)
+        val add_notify  = getSharedPreferences("admin", MODE_PRIVATE)
+        val dulieu =add_notify.getString("admin","false")
 //        Toast.makeText(this,dulieu.toString(),Toast.LENGTH_LONG).show()
-        if (dulieu==false){
-            btn_admin_tb.isInvisible=false
+        if (dulieu!="true"){
+
             btn_admin_tb.alpha=0.5f
             btn_admin_tb.isEnabled=false
+        }
+        else{
+            btn_admin_tb.alpha=1f
+            btn_admin_tb.isEnabled=true
         }
     }
     fun  chuyen_mh(){

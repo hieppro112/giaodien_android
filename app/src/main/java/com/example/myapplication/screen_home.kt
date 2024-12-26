@@ -106,7 +106,7 @@ class screen_home : AppCompatActivity() {
         val sapxepphong = sapXepPhongTheoLuotDat(dulieu_phong)
         val top3 = sapxepphong.take(3)
         var i:Int =0
-        dulieu_phong.forEach {value ->
+        top3.forEach {value ->
                 i += 1
                 //Toast.makeText(this,"title: ${phong.title}  img: ${phong.luotdat}",Toast.LENGTH_LONG).show()
                 when (i) {

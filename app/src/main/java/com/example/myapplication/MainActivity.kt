@@ -46,6 +46,11 @@ class MainActivity : AppCompatActivity() {
         home_login = findViewById(R.id.home_login)
         btn_register = findViewById(R.id.home_register)
         sw_admin = findViewById(R.id.sw_admin)
+
+        val quyen_admin = getSharedPreferences("admin", MODE_PRIVATE)
+        val editor = quyen_admin.edit()
+        editor.putString("admin", "false")
+        editor.apply()
     }
     override fun onResume() {
         super.onResume()

@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="end">
-
         <!-- Nút thoát -->
         <ImageButton
             android:id="@+id/btnExit"
@@ -24,13 +23,17 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Thoát"/>
     </LinearLayout>
+    <ListView
+        android:id="@+id/list_giohang_item"
+        android:layout_width="match_parent"
+        android:layout_height="650dp" />
 
     <!-- Danh sách sản phẩm trong giỏ hàng -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewCart"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+<!--    <ListView-->
+<!--        android:id="@+id/recyclerViewCart"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1" />-->
 
     <!-- Tổng tiền và các nút chức năng -->
     <LinearLayout
@@ -68,7 +71,7 @@
 
             <!-- Nút thanh toán -->
             <Button
-                android:id="@+id/btnCheckout"
+                android:id="@+id/btn_thanhtoan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Thanh toán"
@@ -77,4 +80,6 @@
                 android:layout_weight="1" />
         </LinearLayout>
     </LinearLayout>
+
+
 </LinearLayout>

@@ -24,6 +24,8 @@ class screen_chitiet_phong : AppCompatActivity() {
     lateinit var luotdat_chitiet:TextView
     lateinit var content_chittiet:TextView
     lateinit var giaphong_chitiet:TextView
+    lateinit var btn_chitiet_giohang:LinearLayout
+    private var title:String=""
     private val dulieu_phong = dulieu_Room.rooms.toMutableList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,8 +33,9 @@ class screen_chitiet_phong : AppCompatActivity() {
         setContentView(R.layout.activity_screen_chitiet_phong)
 
         setcontrol()
-        setEvent()
+
         nhandl()
+        setEvent()
     }
     fun setcontrol(){
         img_room_ext = findViewById(R.id.img_room_ext)
@@ -42,7 +45,7 @@ class screen_chitiet_phong : AppCompatActivity() {
         luotdat_chitiet = findViewById(R.id.luotdat_chitiet)
         content_chittiet = findViewById(R.id.content_chittiet)
         giaphong_chitiet=findViewById(R.id.giaphong_chitiet)
-
+        btn_chitietsp_cart=findViewById(R.id.btn_chitietsp_cart)
         //phong b101
 
     }
@@ -55,6 +58,11 @@ class screen_chitiet_phong : AppCompatActivity() {
             val  i = Intent(this,screen_giohang::class.java)
             startActivity(i)
         }
+        btn_chitietsp_cart.setOnClickListener {
+            val  i = Intent(this,screen_giohang::class.java)
+            i.putExtra("title",title)
+            startActivity(i)
+        }
     }
     fun nhandl(){
         var link:String=""
@@ -64,7 +72,7 @@ class screen_chitiet_phong : AppCompatActivity() {
             dulieu_phong.forEach{value->
                 if (tt == value.title){
                     val img = value.img
-                    val title = value.title
+                    title = value.title
                     val luotdat = value.luotdat
                     val content = value.content
                     val gia = value.gia

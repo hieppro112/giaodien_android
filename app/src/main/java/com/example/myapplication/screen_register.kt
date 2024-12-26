@@ -1,73 +1,64 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import android.content.Context
-import androidx.core.view.WindowInsetsCompat
 
 class screen_register : AppCompatActivity() {
-    private lateinit var user:EditText
-    private lateinit var pass:EditText
-    private lateinit var confirm_pass:EditText
+    private lateinit var user: EditText
+    private lateinit var pass: EditText
+    private lateinit var confirm_pass: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_screen_register)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-        setcontrol()
-        chuyenmh()
-
+        setControl()
+        setEvent()
     }
-    fun setcontrol(){
-        // anh xa
+
+    private fun setControl() {
         user = findViewById(R.id.reg_user)
         pass = findViewById(R.id.reg_pass)
-        confirm_pass= findViewById(R.id.txt_pass)
-
+        confirm_pass = findViewById(R.id.txt_pass)
     }
-    fun chuyenmh(){
-        val btn_exit = findViewById<Button>(R.id.btn_back_login)
-        btn_exit.setOnClickListener{
-            val i =Intent(this, MainActivity::class.java)
-            startActivity(i)
+
+    private fun setEvent() {
+        val btnBack = findViewById<Button>(R.id.btn_back_login)
+        btnBack.setOnClickListener {
+            val intent = Intent(this, screen_Login::class.java)
+            startActivity(intent)
         }
-        val btn_register_login = findViewById<Button>(R.id.btn_register_login)
-        btn_register_login.setOnClickListener{
-            // lưu mật khẩu mà người dùng đã nhập
-            val tk_user: String = user.text.toString()
-            if (pass.text.toString() == confirm_pass.text.toString()) {
-                val tk_pass = pass.text.toString()
 
-                // Lưu thông tin người dùng vào SharedPreferences
-                val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
-                val editor = sharedPreferences.edit()
-                editor.putString("username", tk_user)
-                editor.putString("password", tk_pass)
-                editor.apply()
+        val btnRegister = findViewById<Button>(R.id.btn_register_login)
+        btnRegister.setOnClickListener {
+            val tkUser = user.text.toString()
+            val tkPass = pass.text.toString()
+            val tkConfirm = confirm_pass.text.toString()
 
-                Toast.makeText(this, "Đăng ký thành công", Toast.LENGTH_LONG).show()
-
-                val i = Intent(this, screen_Login::class.java)
-                i.putExtra("USERNAME", tk_user)
-                i.putExtra("PASSWORD", tk_pass)
-                startActivity(i)  // Chuyển đến màn hình đăng nhập
-            } else {
-                Toast.makeText(this, "Vui lòng nhập xác minh mật khẩu chính xác", Toast.LENGTH_LONG).show()
+            if (tkUser.isEmpty() || tkPass.isEmpty()) {
+                Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
             }
 
+            if (tkPass == tkConfirm) {
+                val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putString("username", tkUser)
+                editor.putString("password", tkPass)
+                editor.apply()
 
+                Toast.makeText(this, "Đăng ký thành công, bạn có thể đăng nhập ngay bay giờ ", Toast.LENGTH_LONG).show()
+
+                val intent = Intent(this, screen_Login::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                Toast.makeText(this, "Xác nhận mật khẩu không chính xác", Toast.LENGTH_LONG).show()
+            }
         }
     }
-
 }

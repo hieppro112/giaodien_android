@@ -23,7 +23,9 @@ class chitiet_TB : AppCompatActivity() {
         pos=-2
         setcontrol()
         nhandl()
+        quyen_admin()
         setEvent()
+
     }
 
     fun setcontrol(){
@@ -59,5 +61,23 @@ class chitiet_TB : AppCompatActivity() {
             i.putExtra("vitri",pos)
             startActivity(i)
         }
+    }
+    fun quyen_admin(){
+        val quyen_admin = getSharedPreferences("admin", MODE_PRIVATE)
+        val dulieu =quyen_admin.getString("admin","false")
+        if (dulieu!="true"){
+            btn_delete.alpha=0.5f
+            btn_delete.isEnabled=false
+            chitiet_tb_done.alpha=0.5f
+            chitiet_tb_done.isEnabled=false
+
+        }
+        else{
+            btn_delete.alpha=1f
+            btn_delete.isEnabled=true
+            chitiet_tb_done.alpha=1f
+            chitiet_tb_done.isEnabled=true
+        }
+
     }
 }

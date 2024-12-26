@@ -29,7 +29,7 @@ class login_admin : AppCompatActivity() {
         sw_admin_on.isChecked = true;
         xuly_login_admin()
         chuyenmanghinh_admin()
-
+        lay_admin()
     }
 
     fun setcontrol(){
@@ -64,8 +64,22 @@ class login_admin : AppCompatActivity() {
 
                 startActivity(i)
             }
+            else{
+
+            }
         }
     }
+
+    fun lay_admin(){
+        if (sw_admin_on.isChecked){
+            val quyen_admin = getSharedPreferences("admin", MODE_PRIVATE)
+            val editor = quyen_admin.edit()
+            editor.putString("admin", "true")
+            editor.apply()
+        }
+    }
+
+
 
 
 }
