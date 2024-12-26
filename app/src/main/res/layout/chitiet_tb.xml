@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:padding="30dp"
+    tools:context=".chitiet_TB"
     android:background="@drawable/dialog_notifycations"
     android:id="@+id/custom_dialog_checkin"
     android:layout_height="match_parent">
@@ -35,14 +37,15 @@
 
     </LinearLayout>
 
-    <TextView
+    <EditText
+        android:id="@+id/chitiet_tb_title"
         android:layout_width="match_parent"
         android:layout_height="49dp"
         android:text="Thông báo nghỉ lễ 2/9"
         android:textSize="20dp"
         android:textStyle="bold" />
-        <TextView
-            android:id="@+id/textView3"
+        <EditText
+            android:id="@+id/chitiet_tb_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
@@ -55,7 +58,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <Button
-            android:id="@+id/btnxong_dialog_checkin"
+            android:id="@+id/chitiet_tb_done"
             android:layout_width="200dp"
             android:layout_height="70dp"
             android:layout_marginVertical="20dp"
@@ -65,7 +68,7 @@
             android:layout_gravity="center"
             app:backgroundTint="#545454" />
         <Button
-            android:id="@+id/btn_xoa"
+            android:id="@+id/chitiet_tb_delete"
             android:layout_width="200dp"
             android:layout_height="70dp"
             android:layout_marginVertical="20dp"

@@ -32,12 +32,12 @@ class screen_home : AppCompatActivity() {
     lateinit var btn_order_room:LinearLayout;
     lateinit var sc_top_room:ScrollView;
     lateinit var sc_order_room:ScrollView;
-    lateinit var phong:room
-    lateinit var phong2: room
-    lateinit var phong3:room
-    lateinit var phong4:room
-    lateinit var phong5:room
-    lateinit var phong6:room
+    lateinit var phong:LinearLayout
+    lateinit var phong2: LinearLayout
+    lateinit var phong3:LinearLayout
+    lateinit var phong4:LinearLayout
+    lateinit var phong5:LinearLayout
+    lateinit var phong6:LinearLayout
     lateinit var img_top1:ImageView
     lateinit var title_top1:TextView
     lateinit var img_top2:ImageView
@@ -61,9 +61,14 @@ class screen_home : AppCompatActivity() {
     lateinit var img_b106:ImageView
     lateinit var id_b106:TextView
 
+
     lateinit var lay_top1_room:LinearLayout
     lateinit var lay_top2_room:LinearLayout
     lateinit var lay_top3_room:LinearLayout
+
+    private val dulieu_phong = dulieu_Room.rooms.toMutableList()
+    private lateinit var list_room: List<LinearLayout>
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,17 +80,19 @@ class screen_home : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         setcontrol()
         chuyenmh()
-        click_checkin()
+//        click_checkin()
         Event_banner()
         chuyen_top()
 
-        top_room(phong,phong2)
+//        top_room(phong,phong2)
         banner_top()
         tim_top_room()
 
         chitiet_phong_top()
+        full_room()
 
 //        val spinnerT = findViewById<Spinner>(R.id.spinner1)
 //        setSpinner(spinnerT)
@@ -96,42 +103,47 @@ class screen_home : AppCompatActivity() {
     }
     //hiep top san pham
     fun tim_top_room(){
-        val danhsachphong  = listOf(phong,phong2,phong3,phong4,phong5,phong6)
-        val sapxepphong = sapXepPhongTheoLuotDat(danhsachphong)
+        val sapxepphong = sapXepPhongTheoLuotDat(dulieu_phong)
         val top3 = sapxepphong.take(3)
         var i:Int =0
-        for (phong in sapxepphong){
-            i += 1
-            //Toast.makeText(this,"title: ${phong.title}  img: ${phong.luotdat}",Toast.LENGTH_LONG).show()
-            when(i) {
+        dulieu_phong.forEach {value ->
+                i += 1
+                //Toast.makeText(this,"title: ${phong.title}  img: ${phong.luotdat}",Toast.LENGTH_LONG).show()
+                when (i) {
 
                     1 -> {
-                        title_top1.text = phong.title
-                        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1)
+                        title_top1.text = value.title
+                        Glide.with(this).load(value.img).placeholder(R.drawable.img_1)
                             .error(R.drawable.img_1)
                             .into(img_top1)
 
-                        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+                        Glide.with(this).load(value.img).placeholder(R.drawable.img_1)
+                            .error(R.drawable.img)
                             .into(top1_baner)
                     }
-                    2->{
-                        title_top2.text = phong.title
-                        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1)
+
+                    2 -> {
+                        title_top2.text = value.title
+                        Glide.with(this).load(value.img).placeholder(R.drawable.img_1)
                             .error(R.drawable.img_1)
                             .into(img_top2)
-                        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+                        Glide.with(this).load(value.img).placeholder(R.drawable.img_1)
+                            .error(R.drawable.img)
                             .into(top2_baner)
 
                     }
-                    3->{
-                        title_top3.text = phong.title
-                        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1)
+
+                    3 -> {
+                        title_top3.text = value.title
+                        Glide.with(this).load(value.img).placeholder(R.drawable.img_1)
                             .error(R.drawable.img_1)
                             .into(img_top3)
-                        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
+                        Glide.with(this).load(value.img).placeholder(R.drawable.img_1)
+                            .error(R.drawable.img)
                             .into(top3_baner)
                     }
-            }
+                }
+
 
         }
 
@@ -157,7 +169,6 @@ class screen_home : AppCompatActivity() {
             }
             startActivity(i)
         }
-
         lay_top2_room.setOnClickListener {
             val i = Intent(this,screen_chitiet_phong::class.java)
             if (title_top2.text==null){
@@ -178,25 +189,130 @@ class screen_home : AppCompatActivity() {
             }
             startActivity(i)
         }
+
+        //load dl
+        list_room.forEachIndexed { index, phong ->
+            phong.setOnClickListener {
+                val roomNumber = index + 1
+                Toast.makeText(this, "Phòng $index được nhấn", Toast.LENGTH_SHORT).show()
+                when(index){
+                    0->{
+                        val i = Intent(this,screen_chitiet_phong::class.java)
+                        if (dulieu_phong[0].title==null){
+                            Toast.makeText(this,"gitri null",Toast.LENGTH_LONG).show()
+                        }
+                        else {
+                            i.putExtra("tt", dulieu_phong[0].title)
+                        }
+                        startActivity(i)
+                    }
+                    1->{
+                        val i = Intent(this,screen_chitiet_phong::class.java)
+                        if (dulieu_phong[1].title==null){
+                            Toast.makeText(this,"gitri null",Toast.LENGTH_LONG).show()
+                        }
+                        else {
+                            i.putExtra("tt", dulieu_phong[1].title)
+                        }
+                        startActivity(i)
+                    }
+                    2->{
+                        val i = Intent(this,screen_chitiet_phong::class.java)
+                        if (dulieu_phong[2].title==null){
+                            Toast.makeText(this,"gitri null",Toast.LENGTH_LONG).show()
+                        }
+                        else {
+                            i.putExtra("tt", dulieu_phong[2].title)
+                        }
+                        startActivity(i)
+                    }
+                    3->{
+                        val i = Intent(this,screen_chitiet_phong::class.java)
+                        if (dulieu_phong[3].title==null){
+                            Toast.makeText(this,"gitri null",Toast.LENGTH_LONG).show()
+                        }
+                        else {
+                            i.putExtra("tt", dulieu_phong[3].title)
+                        }
+                        startActivity(i)
+                    }
+                    4->{
+                        val i = Intent(this,screen_chitiet_phong::class.java)
+                        if (dulieu_phong[4].title==null){
+                            Toast.makeText(this,"gitri null",Toast.LENGTH_LONG).show()
+                        }
+                        else {
+                            i.putExtra("tt", dulieu_phong[4].title)
+                        }
+                        startActivity(i)
+                    }
+                    5->{
+                        val i = Intent(this,screen_chitiet_phong::class.java)
+                        if (dulieu_phong[5].title==null){
+                            Toast.makeText(this,"gitri null",Toast.LENGTH_LONG).show()
+                        }
+                        else {
+                            i.putExtra("tt", dulieu_phong[5].title)
+                        }
+                        startActivity(i)
+                    }
+                }
+            }
+        }
     }
 
 
     //hiep hien thi top
-    fun top_room(phong:room,phong2:room){
-//        title_top1.text=phong.title
-//        title_top2.text=phong2.title
-//        title_top3.text=phong3.title
-        id_b101.text = phong.title
+    fun full_room(){
+        var i:Int =0
+        dulieu_phong.forEach { value ->
+            i += 1
+            var link:String=""
+            link = value.img.toString()
+            when(i) {
+                1-> {
+                    id_b101.text = value.title.toString()
+                    Glide.with(this).load(link).placeholder(R.drawable.room_background)
+                        .error(R.drawable.room_background)
+                        .override(500, 400).into(img_b101)
+                }
+                2-> {
+                    id_b102.text = value.title.toString()
+                    Glide.with(this).load(link).placeholder(R.drawable.room_background)
+                        .error(R.drawable.room_background)
+                        .override(500, 400).into(img_b102)
+                }
+                3-> {
+                    id_b103.text = value.title.toString()
+                    Glide.with(this).load(link).placeholder(R.drawable.room_background)
+                        .error(R.drawable.room_background)
+                        .override(500, 400).into(img_b103)
+                }
+                4-> {
+                    id_b104.text = value.title.toString()
+                    Glide.with(this).load(link).placeholder(R.drawable.room_background)
+                        .error(R.drawable.room_background)
+                        .override(500, 400).into(img_b104)
+                }
+                5-> {
+                    id_b105.text = value.title.toString()
+                    Glide.with(this).load(link).placeholder(R.drawable.room_background)
+                        .error(R.drawable.room_background)
+                        .override(500, 400).into(img_b105)
+                }
+                6-> {
+                    id_b106.text = value.title.toString()
+                    Glide.with(this).load(link).placeholder(R.drawable.room_background)
+                        .error(R.drawable.room_background)
+                        .override(500, 400).into(img_b106)
+                }
+                else->{}
+            }
+        }
 
-        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img_1)
-            .into(img_b101)
-//        Glide.with(this).load(phong.img).placeholder(R.drawable.img_1).error(R.drawable.img)
-//            .into(img_top1)
-//        Glide.with(this).load(phong2.img).placeholder(R.drawable.img_1).error(R.drawable.img)
-//            .into(img_top2)
-//        Glide.with(this).load(phong3.img).placeholder(R.drawable.img_1).error(R.drawable.img)
-//            .into(img_top3)
-    }
+        }
+
+
     fun chuyen_top(){
         btn_order_room.setOnClickListener {
             sc_order_room.visibility = View.VISIBLE
@@ -220,8 +336,21 @@ class screen_home : AppCompatActivity() {
 
         img_b101=findViewById(R.id.img_b101)
         id_b101 = findViewById(R.id.id_b101)
-        img_b102=findViewById(R.id.img2)
+
+        img_b102=findViewById(R.id.img_b102)
         id_b102 = findViewById(R.id.id_b102)
+
+        img_b103=findViewById(R.id.img_b103)
+        id_b103 = findViewById(R.id.id_b103)
+
+        img_b104=findViewById(R.id.img_b104)
+        id_b104 = findViewById(R.id.id_b104)
+
+        img_b105=findViewById(R.id.img_b105)
+        id_b105 = findViewById(R.id.id_b105)
+
+        img_b106=findViewById(R.id.img_b106)
+        id_b106 = findViewById(R.id.id_b106)
 
 
 
@@ -238,23 +367,14 @@ class screen_home : AppCompatActivity() {
         img_top3 =findViewById(R.id.img_top3)
         title_top3 = findViewById(R.id.top3_title)
 
-        //phong b101
-         phong =room(1,"B1.01","https://th.bing.com/th/id/OIP.BENtDtrJF7Fg8dB3YoWf4QHaEo?rs=1&pid=ImgDetMain",
-            "phòng vip chuẩn quốc tế 5 sao",1000000.0,450);
-        //phong B102
-        phong2 =room(2,"B1.02","https://th.bing.com/th/id/R.90947c88256cb1b241036115872f7254?rik=35wrQ3miYSfyWA&riu=http%3a%2f%2fnhamuong.com%2fwp-content%2fuploads%2f2017%2f12%2fTRE_8247-e1512544912308.jpg&ehk=3KLHu2e7Cr%2bShHctfCWnNlTxCwYqwQZ8y6zeXzWZkGA%3d&risl=&pid=ImgRaw&r=0",
-            "Phòng có view gần biển gió mát cực kì chill",810000.0,500);
-        //phong B103
-        phong3 =room(3,"B1.03","https://th.bing.com/th/id/OIP.v1sG89BR8FJPikukpHJefgHaE8?w=253&h=180&c=7&r=0&o=5&pid=1.7",
-            "Với góc nhìn toàn cảnh thành phố đây là một lựa chọn đáng chú ý",910000.0,400);
-        //phong B104
-        phong4 =room(4,"B1.04","https://th.bing.com/th/id/R.cacf51fe5087e4f1518c0c964b44247f?rik=LhOmM8%2b%2bxF02KA&pid=ImgRaw&r=0",
-            "Phong khách sạn thoáng mát giá trị cao được nhiều người chú ý ",750000.0,150);
-        phong5 =room(5,"B1.05","https://www.besthotelshanghai.com/data/Photos/OriginalPhoto/11274/1127497/1127497656.JPEG",
-            "Phong khách sạn thoáng mát giá trị cao được nhiều người chú ý ",950000.0,150);
-        phong6 =room(6,"B1.06","https://live.staticflickr.com/2832/8943636766_2bb6601b34_b.jpg",
-            "Phong khách sạn thoáng mát giá trị cao được nhiều người chú ý ",6000000.0,900);
+        phong = findViewById(R.id.b1_01)
+        phong2 = findViewById(R.id.b1_02)
+        phong3= findViewById(R.id.b1_03)
+        phong4 = findViewById(R.id.b1_04)
+        phong5 = findViewById(R.id.b1_05)
+        phong6 = findViewById(R.id.b1_06)
 
+        list_room= listOf(phong,phong2,phong3,phong4,phong5,phong6)
 
 
 
